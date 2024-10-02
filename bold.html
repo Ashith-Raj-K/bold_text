@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making bold</title>
+</head>
+<body>
+    <h3>type here something like *bold text * is this </h3>
+    <input id="inputtext" type="text" placeholder="type here ">
+    <button onclick="formatText()">format</button>
+    <h3>The formated text is: </h3>
+    <div id="result"></div>
+    <script>
+        function formatText(){
+            let textElem = document.getElementById('inputtext').value
+            let formatedText = textElem.replace(/\*(.*?)\*/g, '<b>$1</b>');
+            document.getElementById('result').innerHTML = formatedText
+        }
+    </script>
+</body>
+</html>
